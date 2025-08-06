@@ -1,0 +1,51 @@
+.timeline-slider {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-slider h5 {
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.timeline-slider .hour-tick {
+  position: relative;
+  padding-top: 5px;
+}
+
+.timeline-slider .hour-tick small {
+  font-size: 0.7rem;
+  color: #6c757d;
+}
+
+.timeline-slider .hour-tick::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 1px;
+  height: 5px;
+  background-color: #dee2e6;
+  transform: translateX(-50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-slider {
+    padding: 10px;
+  }
+  
+  .timeline-slider h5 {
+    font-size: 1rem;
+  }
+  
+  .hour-tick small {
+    display: none;
+  }
+  
+  .hour-tick:nth-child(6n+1) small {
+    display: block;
+  }
+}

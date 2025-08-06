@@ -1,0 +1,68 @@
+.polygon-list {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.polygon-list .card-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.polygon-list .list-group-item {
+  border-left: 0;
+  border-right: 0;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.polygon-list .list-group-item:first-child {
+  border-top: 0;
+}
+
+.polygon-list .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+.polygon-list .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.polygon-list .badge {
+  font-weight: 500;
+  padding: 4px 6px;
+}
+
+.polygon-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.polygon-item .color-preview {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .polygon-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .polygon-list .list-group-item {
+    padding: 10px 12px;
+  }
+  
+  .polygon-list .btn {
+    padding: 3px 6px;
+    font-size: 0.8rem;
+  }
+}

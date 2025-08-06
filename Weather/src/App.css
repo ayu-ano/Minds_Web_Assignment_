@@ -1,0 +1,216 @@
+/* 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.map-container {
+  position: relative;
+  height: 100%;
+}
+
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.color-preview {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.polygon-item {
+  transition: background-color 0.2s;
+}
+
+.polygon-item:hover {
+  background-color: #f8f9fa;
+}
+
+.hour-tick {
+  flex: 1;
+  text-align: center;
+}  */
+
+
+
+/* Base styles for full viewport coverage */
+html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Root container */
+.app-root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 100%;
+}
+
+/* Header styles */
+.app-header {
+  grid-row: 1;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Timeline styles */
+.app-timeline {
+  grid-row: 2;
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+  z-index: 90;
+}
+
+/* Main content area */
+.app-main {
+  grid-row: 3;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Map container */
+.app-map-container {
+  flex: 3;
+  position: relative;
+  min-width: 0; /* Fix for flexbox overflow */
+}
+
+/* Sidebar container */
+.app-sidebar {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-left: 1px solid #dee2e6;
+  overflow: hidden;
+}
+
+/* Controls section */
+.app-controls-container {
+  flex-shrink: 0;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
+/* Polygon list section */
+.app-polygon-container {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .app-main {
+    flex-direction: column;
+  }
+  
+  .app-sidebar {
+    max-width: 100%;
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .app-controls-container {
+    max-height: none;
+    border-bottom: none;
+    border-right: 1px solid #dee2e6;
+    max-width: 50%;
+  }
+  
+  .app-polygon-container {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-sidebar {
+    flex-direction: column;
+  }
+  
+  .app-controls-container,
+  .app-polygon-container {
+    max-width: 100%;
+  }
+  
+  .app-controls-container {
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+/* Leaflet map fixes */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Map controls positioning */
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Existing component styles */
+.color-preview {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.polygon-item {
+  transition: background-color 0.2s;
+  padding: 8px;
+  margin-bottom: 5px;
+  background: white;
+  border-radius: 4px;
+}
+
+.polygon-item:hover {
+  background-color: #f8f9fa;
+}
+
+.hour-tick {
+  flex: 1;
+  text-align: center;
+}
